@@ -40,9 +40,7 @@ __webpack_require__.r(__webpack_exports__);
         email: this.email,
         password: this.password,
         password_confirmation: this.password_confirmation
-      }).then(function (res) {
-        console.log(res);
-      });
+      }).then(function (res) {});
     }
   }
 });

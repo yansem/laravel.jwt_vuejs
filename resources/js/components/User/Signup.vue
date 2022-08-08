@@ -31,7 +31,7 @@ export default {
                     password_confirmation: this.password_confirmation,
                 })
             .then( res => {
-                console.log(res);
+
             })
         }
     }
