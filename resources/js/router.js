@@ -7,8 +7,16 @@ export default new VueRouter({
     mode: 'history',
     routes: [
         {
-            path: '/fruit', component: () => import('./components/Fruit/Index'),
+            path: '/fruits', component: () => import('./components/Fruit/Index'),
             name: 'fruit.index'
-        }
+        },
+        {
+            path: '/users/login', component: () => import('./components/User/Login'),
+            name: 'user.login'
+        },
+        {
+            path: '/users/signup', component: () => import('./components/User/Signup'),
+            name: 'user.signup'
+        },
     ]
 })

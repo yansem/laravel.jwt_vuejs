@@ -5273,6 +5273,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Index"
 });
@@ -5361,11 +5363,23 @@ vue__WEBPACK_IMPORTED_MODULE_0__["default"].use(vue_router__WEBPACK_IMPORTED_MOD
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   mode: 'history',
   routes: [{
-    path: '/fruit',
+    path: '/fruits',
     component: function component() {
       return __webpack_require__.e(/*! import() */ "resources_js_components_Fruit_Index_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/Fruit/Index */ "./resources/js/components/Fruit/Index.vue"));
     },
     name: 'fruit.index'
+  }, {
+    path: '/users/login',
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_components_User_Login_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/User/Login */ "./resources/js/components/User/Login.vue"));
+    },
+    name: 'user.login'
+  }, {
+    path: '/users/signup',
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_components_User_Signup_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/User/Signup */ "./resources/js/components/User/Signup.vue"));
+    },
+    name: 'user.signup'
   }]
 }));
 
@@ -28117,6 +28131,14 @@ var render = function () {
         _vm._v("Index"),
       ]),
       _vm._v(" "),
+      _c("router-link", { attrs: { to: { name: "user.login" } } }, [
+        _vm._v("Login"),
+      ]),
+      _vm._v(" "),
+      _c("router-link", { attrs: { to: { name: "user.signup" } } }, [
+        _vm._v("Signup"),
+      ]),
+      _vm._v(" "),
       _c("router-view"),
     ],
     1
@@ -43387,7 +43409,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if (chunkId === "resources_js_components_Fruit_Index_vue") return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_components_Fruit_Index_vue":1,"resources_js_components_User_Login_vue":1,"resources_js_components_User_Signup_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};
