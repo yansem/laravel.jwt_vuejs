@@ -23,6 +23,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Signup",
   data: function data() {
@@ -30,7 +31,8 @@ __webpack_require__.r(__webpack_exports__);
       name: '',
       email: '',
       password: '',
-      password_confirmation: ''
+      password_confirmation: '',
+      error: ''
     };
   },
   methods: {
@@ -48,6 +50,8 @@ __webpack_require__.r(__webpack_exports__);
         _this.$router.push({
           name: 'user.personal'
         });
+      })["catch"](function (error) {
+        _this.error = error.response.data.error;
       });
     }
   }
@@ -239,6 +243,10 @@ var render = function () {
           },
         },
       }),
+      _vm._v(" "),
+      _vm.error
+        ? _c("div", { staticClass: "text-danger" }, [_vm._v(_vm._s(_vm.error))])
+        : _vm._e(),
     ]),
   ])
 }
