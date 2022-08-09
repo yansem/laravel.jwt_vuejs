@@ -35,12 +35,20 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     store: function store() {
+      var _this = this;
+
       axios.post('/api/users', {
         name: this.name,
         email: this.email,
         password: this.password,
         password_confirmation: this.password_confirmation
-      }).then(function (res) {});
+      }).then(function (res) {
+        localStorage.setItem('access_token', res.data.access_token);
+
+        _this.$router.push({
+          name: 'user.personal'
+        });
+      });
     }
   }
 });
