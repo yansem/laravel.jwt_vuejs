@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-export default new VueRouter({
+const route = new VueRouter({
     mode: 'history',
     routes: [
         {
@@ -22,5 +22,28 @@ export default new VueRouter({
             path: '/users/personal', component: () => import('./components/User/Personal'),
             name: 'user.personal'
         },
+        {
+            path: '*', component: () => import('./components/404/404'),
+            name: '404'
+        },
     ]
 })
+
+route.beforeEach((to, from, next) => {
+    const accessToken = localStorage.getItem('access_token')
+
+    if (!accessToken) {
+        if (to.name === 'user.login' || to.name === 'user.signup') {
+            return next()
+        } else {
+            return next({name: 'user.login'})
+        }
+    }
+
+    if (to.name === 'user.login' && accessToken || to.name === 'user.signup' && accessToken) {
+        return next({name: 'user.personal'})
+    }
+    next()
+})
+
+export default route
